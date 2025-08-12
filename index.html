@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title> <!-- Empty title to avoid showing a title in the tab -->
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: auto;    /* Let page height grow naturally */
+      overflow-y: auto; /* Allow vertical page scrolling */
+    }
+    #sheetFrame {
+      width: 100%;       /* full width of container/page */
+      min-height: 800px; /* reasonable minimum height */
+      height: auto;      /* allow height to grow */
+      border: none;
+      display: block;
+      overflow: auto;    /* allow scroll inside iframe */
+    }
+  </style>
+</head>
+<body>
+  <iframe
+    id="sheetFrame"
+    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTiGN7pK6fBi0cEcQECg57yTpFXj9TkAppBb2fIizU_NucHVnu8JbJGiV7J8-9xNmPG-pRibOhgsiVd/pubhtml?gid=292583514&chrome=false&headers=false&widget=false"
+    loading="lazy"
+    marginheight="0"
+    marginwidth="0"
+    scrolling="yes"
+  ></iframe>
+
+  <script>
+    // Refresh iframe every 5 minutes (300,000 ms)
+    setInterval(() => {
+      const iframe = document.getElementById('sheetFrame');
+      iframe.src = iframe.src;
+    }, 300000);
+  </script>
+</body>
+</html>
